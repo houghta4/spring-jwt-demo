@@ -1,0 +1,20 @@
+Setting up a new ReactJS + Java Spring Boot project.
+https://www.youtube.com/watch?v=HPsg4_jRTBs
+
+Using Hibernate to Create a One-to-Many Mapping in Java.
+https://www.youtube.com/watch?v=KMecT1HBm4c
+
+Adding Spring Security with JWTs into a Java Project.
+https://www.youtube.com/watch?v=TOQjvskdl3g
+
+Adding a JWT Filter for Spring Security.
+https://www.youtube.com/c/CodersCampus/videos
+
+Adding Auth Login Endpoint for JWT Token Creation
+https://www.youtube.com/watch?v=_L46CaEI490
+
+How to Solve CORS error in a React app
+https://www.youtube.com/watch?v=N1QStjH1rVI
+
+Connecting a ReactJS Login Page to a Spring RESTful Endpoint
+https://www.youtube.com/watch?v=6qJ8JXWC9IA
