@@ -1,7 +1,9 @@
 package com.example.codercampusdemo.filter;
 
+import com.example.codercampusdemo.domain.User;
 import com.example.codercampusdemo.repository.UserRepository;
 import com.example.codercampusdemo.util.JwtUtil;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
@@ -32,7 +35,7 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         //get authorization header and validate
         final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (StringUtils.hasText(header) || !header.startsWith("Bearer ")){ //jwt prefixed with Bearer
+        if (!StringUtils.hasText(header) || (StringUtils.hasText(header) && !header.startsWith("Bearer "))){ //jwt prefixed with Bearer
             chain.doFilter(request, response);
             return;
         }
@@ -42,7 +45,13 @@ public class JwtFilter extends OncePerRequestFilter {
         final String token = header.split(" ")[1].trim();
 
         //get user and put it in spring secruity context
-        UserDetails userDetails = userRepo.findByUsername(jwtUtil.getUsernameFromToken(token)).orElse(null);
+        UserDetails userDetails = null;
+        try {
+            userDetails = userRepo.findByUsername(jwtUtil.getUsernameFromToken(token)).orElse(null);
+        } catch (ExpiredJwtException e) {
+            chain.doFilter(request, response);
+            return;
+        }
 
         //validate token
         if(!jwtUtil.validateToken(token, userDetails)){

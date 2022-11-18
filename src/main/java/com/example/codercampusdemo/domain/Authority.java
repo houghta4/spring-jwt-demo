@@ -44,6 +44,6 @@ public class Authority implements GrantedAuthority { //ez way. normally have a j
 
     @Override
     public String getAuthority() {
-        return null;
+        return authority;
     }
 }

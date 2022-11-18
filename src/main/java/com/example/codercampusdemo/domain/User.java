@@ -18,8 +18,11 @@ public class User implements UserDetails {
     private LocalDate cohortStartDate;
     private String username;
     private String password;
-//    private List<Authority> authorities;
 
+
+    //TODO do we want a 2 way relationship? probably not
+//    private List<Authority> authorities;
+//
 //    public void setAuthorities(List<Authority> authorities) {
 //        this.authorities = authorities;
 //    }
@@ -81,7 +84,8 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> roles = new ArrayList<>();
-        roles.add(new Authority("ROLE_STUDENT")); //ROLE_ is required
+        //hard coded to user for now
+        roles.add(new Authority("ROLE_USER")); //ROLE_ is required
         return roles;
     }
 

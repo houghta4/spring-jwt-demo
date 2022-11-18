@@ -10,11 +10,29 @@ https://www.youtube.com/watch?v=TOQjvskdl3g
 Adding a JWT Filter for Spring Security.
 https://www.youtube.com/c/CodersCampus/videos
 
-Adding Auth Login Endpoint for JWT Token Creation
+Adding Auth Login Endpoint for JWT Token Creation.
 https://www.youtube.com/watch?v=_L46CaEI490
 
-How to Solve CORS error in a React app
+How to Solve CORS error in a React app.
 https://www.youtube.com/watch?v=N1QStjH1rVI
 
-Connecting a ReactJS Login Page to a Spring RESTful Endpoint
+What are the useEffect and useState Hooks in React?.
+https://www.youtube.com/watch?v=pupnAIRpbKo
+
+How to leverage a useState hook for Local Storage in ReactJS.
+https://www.youtube.com/watch?v=aIr288-3AFE
+
+Using Routes with React Router v6 in ReactJS
+https://www.youtube.com/watch?v=SbzKc3lwVQw
+
+Creating a React PrivateRoute that Redirects if not logged in.
+https://www.youtube.com/watch?v=YYDpGYOjfqM
+
+Connecting a ReactJS Login Page to a Spring RESTful Endpoint.
 https://www.youtube.com/watch?v=6qJ8JXWC9IA
+
+Reducing Fetch call Boilerplate Code
+https://www.youtube.com/watch?v=w6YUDqKiT8I
+
+Handling JWT Validation with React and Java
+https://www.youtube.com/watch?v=EobHBIUuV5w
